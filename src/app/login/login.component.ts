@@ -5,6 +5,7 @@ import PerfectScrollbar from 'perfect-scrollbar';
 import * as $ from "jquery";
 import { filter, Subscription } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -16,16 +17,16 @@ export class LoginComponent  {
   private lastPoppedUrl: string;
   private yScrollStack: number[] = [];
 
-  constructor( public location: Location, private router: Router) {}
+  constructor( public location: Location, private router: Router, public service: LoginService) {}
 
   signin: FormGroup = new FormGroup({
     nom: new FormControl('', [Validators.required ]),
     prenoms: new FormControl('', [Validators.required ]),
     dateNaissance: new FormControl('', [Validators.required ]),
-    // adresse: new FormControl('', [Validators.required ]),
+    adresse: new FormControl('', [Validators.required ]),
     tel: new FormControl('', [Validators.required ]),
     email: new FormControl('', [Validators.email, Validators.required ]),
-    // status: new FormControl('', [Validators.required ]),
+    status: new FormControl('', [Validators.required ]),
     password: new FormControl('', [Validators.required, Validators.min(8) ]),
     confirmPassword: new FormControl('', [Validators.required, Validators.min(8) ]),
   });
@@ -39,6 +40,12 @@ export class LoginComponent  {
   get passwordInput() { return this.signin.get('password'); }
   inscription(){
     console.log(this.signin.value);
-    this.router.navigate(['/dashboard']);
+    if(this.signin.get('password').toString() === this.signin.get('confirmPassword').toString()){
+        this.service.inscription();
+        this.router.navigate(['dashboard']);
+    }else{
+        console.log('Mot de passe reconfirmer');
+    }
+    
   }
 }

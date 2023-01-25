@@ -10,6 +10,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import { LoginRoutes } from './login.routing';
 import {MatTabsModule} from '@angular/material/tabs'
+import { AdminLayoutComponent } from 'app/layouts/admin-layout/admin-layout.component';
 
 
 
@@ -28,6 +29,7 @@ import {MatTabsModule} from '@angular/material/tabs'
     MatTabsModule
   ],
   declarations: [
+    
   ]
 })
 
