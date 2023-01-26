@@ -26,32 +26,32 @@ export const AdminLayoutRoutes: Routes = [
             },
             {
                 path:'dashboard',
-                // canActivate:[AuthGuard],
+                canActivate:[AuthGuard],
                 component: DashboardComponent,
             },
             {
                 path:'user-profile',
-                // canActivate:[AuthGuard],
+                canActivate:[AuthGuard],
                 component: UserProfileComponent,
             },
             {
                 path:'voiture',
-                // canActivate:[AuthGuard],
+                canActivate:[AuthGuard],
                 component: VoitureComponent,
             },
             {
                 path:'reparation',
-                // canActivate:[AuthGuard],
+                canActivate:[AuthGuard],
                 component: ReparationComponent,
             },
             {
                 path:'notification',
-                // canActivate:[AuthGuard],
+                canActivate:[AuthGuard],
                 component: NotificationsComponent,
             },
             {
                 path:'upgrade',
-                // canActivate:[AuthGuard],
+                canActivate:[AuthGuard],
                 component: UpgradeComponent,
             }
         ]
