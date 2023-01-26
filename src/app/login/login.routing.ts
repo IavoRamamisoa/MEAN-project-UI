@@ -51,11 +51,11 @@ export const LoginRoutes: Routes = [
     // }
     { path: 'login',      component: LoginComponent },
     {
-        path: 'dashboard',
-        component: AdminLayoutComponent,
-        children: [{
+        // path: 'dashboard',
+        // component: AdminLayoutComponent,
+        // children: [{
         path: '',
         loadChildren: () => import('./../layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)
-        }]
+        // }]
     }
 ];
