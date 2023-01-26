@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AdminLayoutRoutes } from './admin-layout.routing';
+import { AdminLayoutRoutingModule } from './admin-layout-routing.module';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { IconsComponent } from '../../icons/icons.component';
@@ -19,10 +18,20 @@ import { VoitureComponent } from 'app/voiture/voiture.component';
 
 
 
+
 @NgModule({
+  declarations: [
+    DashboardComponent,
+    ReparationComponent,
+    VoitureComponent,
+    UserProfileComponent,
+    IconsComponent,
+    NotificationsComponent,
+    UpgradeComponent,
+  ],
   imports: [
     CommonModule,
-    RouterModule.forChild(AdminLayoutRoutes),
+    AdminLayoutRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
@@ -32,15 +41,7 @@ import { VoitureComponent } from 'app/voiture/voiture.component';
     MatSelectModule,
     MatTooltipModule,
   ],
-  declarations: [
-    DashboardComponent,
-    ReparationComponent,
-    VoitureComponent,
-    UserProfileComponent,
-    IconsComponent,
-    NotificationsComponent,
-    UpgradeComponent,
-  ]
+ 
 })
 
 export class AdminLayoutModule {}

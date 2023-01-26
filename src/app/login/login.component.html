@@ -7,7 +7,7 @@
           <mat-tab label="INSCRIPTION">
             <div class="card">
               <div class="card-header card-header-warning">
-                <h4 class="card-title">S'INSCRIR</h4>
+                <h4 class="card-title">S'INSCRIRE</h4>
                 <p class="card-category">Creer votre compte</p>
               </div>
               <div class="card-body">
@@ -34,10 +34,10 @@
                         <mat-label>Status</mat-label>
                         <!-- <mat-select [(value)]="selected"> -->
                         <mat-select formControlName="status">
-                          <mat-option value="option1">Client</mat-option>
-                          <mat-option value="option2">Admin</mat-option>
-                          <mat-option value="option3">Responsible atelier</mat-option>
-                          <mat-option value="option4">Responsible Financiere</mat-option>
+                          <mat-option value="Client">Client</mat-option>
+                          <mat-option value="Admin">Admin</mat-option>
+                          <mat-option value="Responsable atelier">Responsible atelier</mat-option>
+                          <mat-option value="Responssable Financiere">Responsible Financiere</mat-option>
                         </mat-select>
                       </mat-form-field>
                     </div>
@@ -62,7 +62,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <mat-form-field>
-                        <input matInput placeholder="Telephone" type="text" formControlName="tel" required>
+                        <input matInput placeholder="Telephone" type="text" formControlName="telephone" required>
                         <!-- <mat-hint *ngIf="!passwordInput.value">Enter votre numero de telephone</mat-hint> -->
                       </mat-form-field>
                     </div>
@@ -104,7 +104,7 @@
               </div>
             </div>
           </mat-tab>
-          <mat-tab label="LOGIN">
+          <mat-tab label="CONNEXION">
             <div class="card">
               <div class="card-header card-header-info">
                 <h4 class="card-title">SE CONNECTER</h4>
@@ -132,8 +132,8 @@
                       </mat-form-field>
                     </div>
                   </div>
-                  <button mat-raised-button class="btn btn-success pull-right" type="submit"
-                    [disabled]="login.valid">Valider</button>
+                  <button mat-raised-button class="btn btn-success pull-right" type="submit" [disabled]="!login.valid"
+                    (click)="connexion()">Valider</button>
                   <div class="clearfix"></div>
                 </form>
               </div>

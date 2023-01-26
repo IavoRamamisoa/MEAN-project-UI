@@ -20,33 +20,36 @@ export class LoginComponent  {
   constructor( public location: Location, private router: Router, public service: LoginService) {}
 
   signin: FormGroup = new FormGroup({
-    nom: new FormControl('qsdfsf', [Validators.required ]),
-    prenoms: new FormControl('qsdfqdf', [Validators.required ]),
+    nom: new FormControl('RAMAMISOA', [Validators.required ]),
+    prenoms: new FormControl('Iavo', [Validators.required ]),
     dateNaissance: new FormControl('', [Validators.required ]),
-    adresse: new FormControl('qsdfqsdf', [Validators.required ]),
-    tel: new FormControl('qdqsfqsdf', [Validators.required ]),
+    adresse: new FormControl('lot adress', [Validators.required ]),
+    telephone: new FormControl('033 29 143 38', [Validators.required ]),
     email: new FormControl('test2@tst.com', [Validators.email, Validators.required ]),
-    status: new FormControl('qsdfqsdf', [Validators.required ]),
+    status: new FormControl('Admin', [Validators.required ]),
     password: new FormControl('qqqq', [Validators.required, Validators.min(8) ]),
     confirmPassword: new FormControl('qqqq', [Validators.required, Validators.min(8) ]),
   });
 
   login: FormGroup = new FormGroup({
-    email: new FormControl('', [Validators.email, Validators.required ]),
-    password: new FormControl('', [Validators.required, Validators.min(8) ]),
+    email: new FormControl('ali@gmail.com', [Validators.email, Validators.required ]),
+    password: new FormControl('azeaze', [Validators.required, Validators.min(8) ]),
   });
   hide = true;
   get emailInput() { return this.signin.get('email'); }
   get passwordInput() { return this.signin.get('password'); }
   async inscription(){
-    console.log(this.signin.value);
     if(this.signin.get('password').toString() === this.signin.get('confirmPassword').toString()){
-        this.service.inscription();
+        this.service.inscription(this.signin.value);
         this.router.navigate(['/dashboard']);
-        // await this.router.navigateByUrl('/')
     }else{
         console.log('Mot de passe reconfirmer');
     }
     
+  }
+
+  async connexion(){
+    this.service.connection(this.signin.value);
+    this.router.navigate(['/dashboard']);
   }
 }

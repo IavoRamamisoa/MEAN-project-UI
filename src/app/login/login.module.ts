@@ -8,16 +8,13 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
-import { LoginRoutes } from './login.routing';
 import {MatTabsModule} from '@angular/material/tabs'
-import { AdminLayoutComponent } from 'app/layouts/admin-layout/admin-layout.component';
 
 
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(LoginRoutes),
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
