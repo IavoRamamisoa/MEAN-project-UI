@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+    user : any  = JSON.parse(localStorage.getItem('user') as string) as any ;
     private listTitles: any[];
     location: Location;
       mobile_menu_visible: any = 0;

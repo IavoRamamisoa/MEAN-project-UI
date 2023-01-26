@@ -36,8 +36,7 @@ export class LoginComponent  {
     password: new FormControl('azeaze', [Validators.required, Validators.min(8) ]),
   });
   hide = true;
-  get emailInput() { return this.signin.get('email'); }
-  get passwordInput() { return this.signin.get('password'); }
+
   async inscription(){
     if(this.signin.get('password').toString() === this.signin.get('confirmPassword').toString()){
         this.service.inscription(this.signin.value);

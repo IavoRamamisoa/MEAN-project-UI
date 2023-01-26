@@ -20,7 +20,7 @@ export class LoginService {
         .subscribe(
             (res: any) =>{
               console.log(res);
-              localStorage.setItem('user',res.result);
+              localStorage.setItem('user',JSON.stringify(res.result));
               localStorage.setItem('token',res.token);
             },
             err => {
@@ -45,7 +45,7 @@ export class LoginService {
         .subscribe(
             (res: any) =>{
                 console.log(res);
-                localStorage.setItem('user',res.result);
+                localStorage.setItem('user',JSON.stringify(res.result));
                 localStorage.setItem('token',res.token);
             },
             err => {

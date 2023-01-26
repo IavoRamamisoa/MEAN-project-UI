@@ -15,6 +15,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import { ReparationComponent } from 'app/reparation/reparation.component';
 import { VoitureComponent } from 'app/voiture/voiture.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 
@@ -40,6 +41,7 @@ import { VoitureComponent } from 'app/voiture/voiture.component';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    MatTabsModule
   ],
  
 })
