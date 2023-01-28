@@ -5,7 +5,7 @@ import { UserProfileComponent } from '../../user-profile/user-profile.component'
 import { IconsComponent } from '../../icons/icons.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
-import { ReparationComponent } from 'app/reparation/reparation.component';
+import { ReparationComponent } from 'app/reparation/reparation-details.component';
 import { VoitureComponent } from 'app/voiture/voiture.component';
 import { compileNgModule } from '@angular/compiler';
 import { NgModule } from '@angular/core';
