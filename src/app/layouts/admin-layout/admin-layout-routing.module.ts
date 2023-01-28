@@ -45,7 +45,7 @@ export const AdminLayoutRoutes: Routes = [
                 component: ReparationComponent,
             },
             {
-                path:'notification',
+                path:'notifications',
                 canActivate:[AuthGuard],
                 component: NotificationsComponent,
             },

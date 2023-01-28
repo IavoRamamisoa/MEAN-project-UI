@@ -153,5 +153,9 @@ export class AdminLayoutComponent implements OnInit {
       }
       return bool;
   }
+  antsoy(msg: String){
+    console.log(msg);
+    
+  }
 
 }

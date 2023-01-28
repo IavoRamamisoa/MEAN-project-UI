@@ -16,7 +16,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { ReparationComponent } from 'app/reparation/reparation.component';
 import { VoitureComponent } from 'app/voiture/voiture.component';
 import { MatTabsModule } from '@angular/material/tabs';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -41,7 +41,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
-    MatTabsModule
+    MatTabsModule,
+    MatProgressSpinnerModule
   ],
  
 })
