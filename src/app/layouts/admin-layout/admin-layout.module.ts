@@ -17,6 +17,7 @@ import { ReparationComponent } from 'app/reparation/reparation-details.component
 import { VoitureComponent } from 'app/voiture/voiture.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { VoitureModule } from 'app/voiture/voiture.module';
 
 
 
@@ -32,6 +33,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
   ],
   imports: [
     CommonModule,
+    VoitureModule,
     AdminLayoutRoutingModule,
     FormsModule,
     ReactiveFormsModule,
@@ -42,7 +44,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatSelectModule,
     MatTooltipModule,
     MatTabsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule 
   ],
  
 })

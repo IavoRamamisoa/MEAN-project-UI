@@ -35,10 +35,14 @@ export const AdminLayoutRoutes: Routes = [
                 component: UserProfileComponent,
             },
             {
-                path:'voiture',
-                canActivate:[AuthGuard],
-                component: VoitureComponent,
-            },
+                path: 'voiture',
+                loadChildren: () => import('./../../voiture/voiture.module').then(m => m.VoitureModule)
+               },
+            // {
+            //     path:'voiture',
+            //     canActivate:[AuthGuard],
+            //     component: VoitureComponent,
+            // },
             {
                 path:'reparation',
                 canActivate:[AuthGuard],

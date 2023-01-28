@@ -1,0 +1,91 @@
+<div class="main-content">
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header card-header-info">
+            <h4 class="card-title">INSERTION VOITURE</h4>
+            <p class="card-category">INSERER UNE NOUVELLE VOITURE</p>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="formVoiture">
+              <div class="row">
+                <div class="col-md-12">
+                  <mat-form-field>
+                    <input matInput placeholder="Proprietaire" type="text" formControlName="idProprietaire" required
+                      [readonly]="true">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <mat-form-field>
+                    <input matInput placeholder="Matricule" type="text" formControlName="matricule" required>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <mat-form-field>
+                    <input matInput placeholder="Marque" type="text" formControlName="marque" required>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <mat-form-field>
+                    <input matInput placeholder="Couleur" type="text" formControlName="couleur" required>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <button mat-raised-button type="submit" class="btn btn-success pull-right" (click)="insertionVoiture()">
+                INSERER </button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title ">VOITURE</h4>
+            <p class="card-category"> Liste de tous les voiture enregistrer</p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-warning">
+                  <th>Date d'enregistrement</th>
+                  <th> idProprietaire </th>
+                  <th> Matricule</th>
+                  <th> Marque </th>
+                  <th> Couleur</th>
+                  <th> Action </th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let voiture of listVoiture">
+                    <td> {{ voiture.dateDepot }} </td>
+                    <td> {{ voiture.idProprietaire }} </td>
+                    <td> {{ voiture.matricule }} </td>
+                    <td> {{ voiture.description.marque }} </td>
+                    <td> {{ voiture.description.couleur }} </td>
+                    <td class="text-primary" (click)="showDetails(voiture.id)"> detail </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
