@@ -37,7 +37,7 @@ export const AdminLayoutRoutes: Routes = [
             {
                 path: 'voiture',
                 loadChildren: () => import('./../../voiture/voiture.module').then(m => m.VoitureModule)
-               },
+            },
             // {
             //     path:'voiture',
             //     canActivate:[AuthGuard],

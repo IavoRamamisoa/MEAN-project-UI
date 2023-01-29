@@ -11,7 +11,7 @@ import { VoitureListComponent } from './voiture-list/voiture-list.component';
 
 export const routes: Routes = [
     {
-        path: '',
+        path: 'voiture',
         component: VoitureComponent,
        children: [
         {

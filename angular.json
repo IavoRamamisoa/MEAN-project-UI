@@ -140,6 +140,16 @@
             ],
             "exclude": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "material-dashboard-angular:build:production",
+            "firebaseProject": "mean-ui",
+            "firebaseHostingSite": "mean-ui"
+          }
         }
       }
     },

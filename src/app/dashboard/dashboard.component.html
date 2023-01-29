@@ -12,12 +12,7 @@
                             <small></small>
                         </h3>
                     </div>
-                    <!-- <div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons text-danger">construction</i>
-                            <a href="javascript:void(0)">Get More Space...</a>
-                        </div>
-                    </div> -->
+
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
@@ -29,11 +24,7 @@
                         <p class="card-category">Reparations</p>
                         <h3 class="card-title">4</h3>
                     </div>
-                    <!-- <div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons">date_range</i> Last 24 Hours
-                        </div>
-                    </div> -->
+
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
@@ -45,72 +36,93 @@
                         <p class="card-category">Payemments</p>
                         <h3 class="card-title">7500$</h3>
                     </div>
-                    <!-- <div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons">local_offer</i> Tracked from Github
-                        </div>
-                    </div> -->
+
                 </div>
             </div>
-            <!-- <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="card card-stats">
-                    <div class="card-header card-header-info card-header-icon">
-                        <div class="card-icon">
-                            <i class="fa fa-twitter"></i>
-                        </div>
-                        <p class="card-category">Followers</p>
-                        <h3 class="card-title">+245</h3>
-                    </div>
-                    <div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons">update</i> Just Updated
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+
         </div>
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 <div class="card">
-                    <div class="card-header card-header-info">
-                        <h4 class="card-title">Liste des voitures</h4>
-                        <p class="card-category"></p>
+                    <div class="card-header card-header-danger">
+                        <h3 class="card-title">STATISTIQUES</h3>
                     </div>
-                    <div class="card-body table-responsive">
-                        <table class="table table-hover">
-                            <thead class="text-warning">
-                                <th>ID</th>
-                                <th>Matricule</th>
-                                <th>Decription</th>
-                                <th>Details</th>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Dakota Rice</td>
-                                    <td>$36,738</td>
-                                    <td>Niger</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Minerva Hooper</td>
-                                    <td>$23,789</td>
-                                    <td>Curaçao</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Sage Rodriguez</td>
-                                    <td>$56,142</td>
-                                    <td>Netherlands</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Philip Chaney</td>
-                                    <td>$38,735</td>
-                                    <td>Korea, South</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2"></div>
+                            <div class="col-lg-10 col-md-10">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h4 class="card-title">Couts des Reparations</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-6 col-sm-6">
+                                        <div class="card card-stats">
+                                            <div class="card-header card-header-primary card-header-icon">
+                                                <div class="card-icon">
+                                                    <i class="material-icons">currency_exchange</i>
+                                                </div>
+                                                <p class="card-category">Cout total des repations payer par jour</p>
+                                                <h3 class="card-title">{{ statReparationJour }} Arirary
+                                                    <small></small>
+                                                </h3>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-12 col-sm-12">
+                                        <div class="card card-stats">
+                                            <div class="card-header card-header-warrning card-header-icon">
+                                                <div class="card-icon">
+                                                    <i class="material-icons">currency_exchange</i>
+                                                </div>
+                                                <p class="card-category">Cout total des repations payer par mois</p>
+                                                <h3 class="card-title"> {{ statReparationMois }} Ariary</h3>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h4 class="card-title">Statistique des reparation</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-12 col-sm-12">
+                                        <div class="card card-stats">
+                                            <div class="card-header card-header-success card-header-icon">
+                                                <div class="card-icon">
+                                                    <i class="material-icons">currency_exchange</i>
+                                                </div>
+                                                <p class="card-category">BENEFICES</p>
+                                                <h3 class="card-title"> {{ benefice }} Arirary
+                                                    <small></small>
+                                                </h3>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-12 col-sm-12">
+                                        <div class="card card-stats">
+                                            <div class="card-header card-header-info card-header-icon">
+                                                <div class="card-icon">
+                                                    <i class="material-icons">construction</i>
+                                                </div>
+                                                <p class="card-category">REPARATION MOYENNE</p>
+                                                <h3 class="card-title"> {{ reparationMoyenne }}</h3>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
             </div>

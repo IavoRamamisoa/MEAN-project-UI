@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "mean-ui"
+  },
+  "targets": {
+    "mean-ui": {
+      "hosting": {
+        "material-dashboard-angular": [
+          "mean-ui"
+        ]
+      }
+    }
+  }
+}
