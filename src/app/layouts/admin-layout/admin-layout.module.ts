@@ -18,7 +18,7 @@ import { VoitureComponent } from 'app/voiture/voiture.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { VoitureModule } from 'app/voiture/voiture.module';
-
+import {CdkDragDrop, DragDropModule, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 
 @NgModule({
@@ -44,7 +44,8 @@ import { VoitureModule } from 'app/voiture/voiture.module';
     MatSelectModule,
     MatTooltipModule,
     MatTabsModule,
-    MatProgressSpinnerModule 
+    MatProgressSpinnerModule,
+    DragDropModule
   ],
  
 })
