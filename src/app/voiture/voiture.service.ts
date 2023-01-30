@@ -34,6 +34,7 @@ export class VoitureService {
     return this.http.get(`${urlAPI}/voiture`,{ headers: this.headers}) .pipe(
       map((result: any[]) => ({
         data: result.map((item) =>({
+          id: item._id,
           idProprietaire: item.idProprietaire,
           proprietaire: 'get by ID',
           matricule: item.matricule,

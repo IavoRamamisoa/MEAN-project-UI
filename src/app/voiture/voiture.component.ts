@@ -2,7 +2,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { environment } from 'environments/environment';
-import { Router, NavigationEnd, NavigationStart } from '@angular/router';
+import { Router, NavigationEnd, NavigationStart, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { VoitureService } from './voiture.service';
 
@@ -14,6 +14,14 @@ const urlAPI= environment.urlAPI;
 })
 export class VoitureComponent  {
  
-  constructor() {
+  constructor(private router: Router,
+    private route: ActivatedRoute) {
+   }
+
+   redirectList(){
+      this.router.navigate(['list'],{relativeTo: this.route});
+   }
+   redirectDetails(){
+    this.router.navigate(['details'],{relativeTo: this.route});
    }
 }

@@ -49,6 +49,6 @@ export class VoitureListComponent implements OnInit {
   showDetails(idVoiture: string){
     console.log('resirection voiture id= ', idVoiture);
     
-    this.router.navigate(['/voiture/details']);
+    this.router.navigate(['/voiture/details',idVoiture]);
   }
 }

@@ -12,26 +12,21 @@ import { VoitureListComponent } from './voiture-list/voiture-list.component';
 export const routes: Routes = [
     {
         path: 'voiture',
+         canActivate:[AuthGuard],
         component: VoitureComponent,
-       children: [
-        {
-            path: '',
-            pathMatch: 'full',
-            redirectTo:'list',
-        },
-        {
-            path: 'list',
-            canActivate:[AuthGuard],
-            component: VoitureListComponent,
-           
-        },
-        {
-            path:'details',
-            canActivate:[AuthGuard],
-            component: VoitureDetailsComponent,
-        }
-       ]
+       
     },
+    {
+        path: 'list',
+         canActivate:[AuthGuard],
+        component: VoitureListComponent,
+       
+    },
+    {
+        path:'details/:idVoiture',
+        canActivate:[AuthGuard],
+        component: VoitureDetailsComponent,
+    }
     
     
 ];
