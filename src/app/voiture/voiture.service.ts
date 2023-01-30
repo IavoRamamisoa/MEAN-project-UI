@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Voiture } from 'app/models/Voiture';
 import { dateFormat } from 'app/utils/utils';
 import { environment } from 'environments/environment';
 import { from, map, mergeMap, Observable, tap } from 'rxjs';
@@ -31,18 +32,7 @@ export class VoitureService {
   }
 
   getListVoiture(){
-    return this.http.get(`${urlAPI}/voiture`,{ headers: this.headers}) .pipe(
-      map((result: any[]) => ({
-        data: result.map((item) =>({
-          id: item._id,
-          idProprietaire: item.idProprietaire,
-          proprietaire: 'get by ID',
-          matricule: item.matricule,
-          description: item.description,
-          dateDepot: dateFormat(item.dateDepot)
-        }))
-      }))
-    )
+    return this.http.get<Voiture[]>(`${urlAPI}/voiture`,{ headers: this.headers})
   }
 
   insertionVoiture(voiture: any){

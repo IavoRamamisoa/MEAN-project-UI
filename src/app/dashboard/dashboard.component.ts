@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
+import { lastValueFrom } from 'rxjs';
 import { DashboardService } from './dashboard.service';
 
 @Component({
@@ -8,9 +9,9 @@ import { DashboardService } from './dashboard.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent  implements OnInit{
-   nbrVoiture: any= 6;
-   nbrReparation: any= 7;
-   coutTotale: any= 70000;
+   nbrVoiture: number= 0;
+   nbrReparation: any= 0;
+   coutTotale: any= 0;
 
    statReparationJour: any= 1500 ;
    statReparationMois: any= 25000 ;
@@ -20,11 +21,10 @@ export class DashboardComponent  implements OnInit{
 
   constructor(private service:DashboardService) {
    }
-  async ngOnInit(): Promise<void> {
-    this.nbrVoiture= await this.service.getNbrVoiture().toPromise();
-    console.log('nbr= ',this.nbrVoiture);
-  
-   
+  async ngOnInit() {
+    this.nbrVoiture= await lastValueFrom(this.service.getNbrVoiture());
+    this.nbrReparation= await lastValueFrom(this.service.getNbrReparation());
+    this.coutTotale = await lastValueFrom(this.service.getCoutTotal());
   }
 
 }

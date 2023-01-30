@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from 'environments/environment';
 
 
@@ -12,7 +13,8 @@ export class LoginService {
     'Content-Type': 'application/json',
     'Accept': 'application/json' });
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) { }
 
   inscription(user: any){
@@ -22,6 +24,7 @@ export class LoginService {
               console.log(res);
               localStorage.setItem('user',JSON.stringify(res.result));
               localStorage.setItem('token',res.token);
+              this.router.navigate(['/dashboard']);
             },
             err => {
                 console.log(err.message);
@@ -29,24 +32,15 @@ export class LoginService {
         );
   }
   connection(user: any){
-    // return this.http.post(`${urlAPI}/user/signin`,user,{ headers: this.headers})
-    // .pipe(tap({
-    //     next: (data: any) => {
-    //      console.log(data);
-    //     //  localStorage.setItem('user',data.result)
-    //      console.log(data.token);
-    //      localStorage.setItem('token',data.token)
-    //     } ,
-    //     error: (error) => {
-    //       throw new Error(error)
-    //     }
-    // }) );
+    console.log(user);
+    
     return this.http.post(`${urlAPI}/user/signin`,user,{ headers: this.headers})
         .subscribe(
             (res: any) =>{
                 console.log(res);
                 localStorage.setItem('user',JSON.stringify(res.result));
                 localStorage.setItem('token',res.token);
+                this.router.navigate(['/dashboard']);
             },
             err => {
                 console.log(err.message);

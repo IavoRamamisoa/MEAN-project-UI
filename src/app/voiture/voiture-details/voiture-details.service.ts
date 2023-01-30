@@ -8,10 +8,11 @@ const urlAPI= environment.urlAPI;
   providedIn: 'root'
 })
 export class VoitureDetailsService {
+  token= localStorage.getItem('token')
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
-    'Accept': 'application/json' });
-    
+    'Accept': 'application/json',
+    'Authorization':`Bearer ${this.token}`, });
   constructor(private http: HttpClient) { }
 
  

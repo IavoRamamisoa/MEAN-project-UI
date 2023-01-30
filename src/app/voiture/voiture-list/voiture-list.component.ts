@@ -3,8 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { environment } from 'environments/environment';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
-import { Observable } from 'rxjs';
+import { lastValueFrom, Observable } from 'rxjs';
 import { VoitureService } from '../voiture.service';
+import { dateFormat } from 'app/utils/utils';
+import { Voiture } from 'app/models/Voiture';
 
 const urlAPI= environment.urlAPI;
 @Component({
@@ -15,7 +17,7 @@ const urlAPI= environment.urlAPI;
 export class VoitureListComponent implements OnInit {
   user : any  = JSON.parse(localStorage.getItem('user') as string) as any ;
   proprietaire= `${this.user.nom} ${this.user.prenoms} (${this.user.email})`
-  listVoiture : any[] = [];
+  listVoiture : Voiture[] = [];
   formVoiture:FormGroup;
   constructor(private service: VoitureService,private router: Router) {
    this.formVoiture = new FormGroup({
@@ -27,10 +29,8 @@ export class VoitureListComponent implements OnInit {
    }
   
   
-
   async ngOnInit() {
-    const voituresData= await  this.service.getListVoiture().toPromise();
-    this.listVoiture= voituresData.data;
+    await this.fectchVoitureData()
   }
 
   async insertionVoiture(){
@@ -43,12 +43,15 @@ export class VoitureListComponent implements OnInit {
       },
       dateDepot: new Date()
     }
-    this.service.insertionVoiture(voiture);
+    await this.service.insertionVoiture(voiture);
+    await this.fectchVoitureData()
   }
 
   showDetails(idVoiture: string){
-    console.log('resirection voiture id= ', idVoiture);
-    
     this.router.navigate(['/voiture/details',idVoiture]);
+  }
+
+  async fectchVoitureData(){
+    this.listVoiture=  await  lastValueFrom(this.service.getListVoiture());
   }
 }

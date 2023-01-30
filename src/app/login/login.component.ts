@@ -25,10 +25,10 @@ export class LoginComponent  {
     dateNaissance: new FormControl('', [Validators.required ]),
     adresse: new FormControl('lot adress', [Validators.required ]),
     telephone: new FormControl('033 29 143 38', [Validators.required ]),
-    email: new FormControl('test2@tst.com', [Validators.email, Validators.required ]),
+    email: new FormControl('test2@email.com', [Validators.email, Validators.required ]),
     status: new FormControl('Admin', [Validators.required ]),
-    password: new FormControl('qqqq', [Validators.required, Validators.min(8) ]),
-    confirmPassword: new FormControl('qqqq', [Validators.required, Validators.min(8) ]),
+    password: new FormControl('Qwerty123', [Validators.required, Validators.min(8) ]),
+    confirmPassword: new FormControl('Qwerty123', [Validators.required, Validators.min(8) ]),
   });
 
   login: FormGroup = new FormGroup({
@@ -40,7 +40,6 @@ export class LoginComponent  {
   async inscription(){
     if(this.signin.get('password').toString() === this.signin.get('confirmPassword').toString()){
         this.service.inscription(this.signin.value);
-        this.router.navigate(['/dashboard']);
     }else{
         console.log('Mot de passe reconfirmer');
     }
@@ -48,7 +47,7 @@ export class LoginComponent  {
   }
 
   async connexion(){
-    this.service.connection(this.signin.value);
-    this.router.navigate(['/dashboard']);
+    await this.service.connection(this.login.value);
+    
   }
 }

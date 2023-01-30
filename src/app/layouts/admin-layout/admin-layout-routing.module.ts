@@ -5,13 +5,14 @@ import { UserProfileComponent } from '../../user-profile/user-profile.component'
 import { IconsComponent } from '../../icons/icons.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
-import { ReparationComponent } from 'app/reparation/reparation-details.component';
+import { ReparationComponent } from 'app/reparation/reparation.component';
 import { VoitureComponent } from 'app/voiture/voiture.component';
 import { compileNgModule } from '@angular/compiler';
 import { NgModule } from '@angular/core';
 import { LoginComponent } from 'app/login/login.component';
 import { AdminLayoutComponent } from './admin-layout.component';
 import { AuthGuard } from 'app/auth.guard';
+import { VoitureListComponent } from 'app/voiture/voiture-list/voiture-list.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -41,7 +42,7 @@ export const AdminLayoutRoutes: Routes = [
             // {
             //     path:'voiture',
             //     canActivate:[AuthGuard],
-            //     component: VoitureComponent,
+            //     component: VoitureListComponent,
             // },
             {
                 path:'reparation',

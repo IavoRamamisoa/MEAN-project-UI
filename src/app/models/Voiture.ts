@@ -1,4 +1,5 @@
 export interface Voiture{
+    _id: string,
     idProprietaire: string,
     matricule: string,
     dateDepot: Date,

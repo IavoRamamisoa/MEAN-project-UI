@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ReparationComponent } from './reparation-details.component';
+import { ReparationComponent } from './reparation.component';
 
 
 describe('ReparationComponent', () => {

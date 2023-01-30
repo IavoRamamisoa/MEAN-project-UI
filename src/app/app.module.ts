@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTabsModule } from '@angular/material/tabs';
+import { DatePipe } from '@angular/common';
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -34,7 +35,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatSelectModule,
     MatTooltipModule,
     MatTabsModule,
-    
+    DatePipe
   ],
   declarations: [
     AppComponent,
@@ -42,6 +43,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     LoginComponent
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    DatePipe
+  ]
 })
 export class AppModule { }

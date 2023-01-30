@@ -9,46 +9,43 @@ import { map, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class DashboardService {
+  token= localStorage.getItem('token')
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
-    'Accept': 'application/json' });
+    'Accept': 'application/json',
+    'Authorization':`Bearer ${this.token}`, });
   constructor(
     private http: HttpClient
   ) { }
 
   getNbrVoiture(){
-    console.log('tonga ato ve lo?');
-    return this.http.get(`${urlAPI}/voiture/count`,{ headers: this.headers});
+    return this.http.get(`${urlAPI}/voiture/count`,{ headers: this.headers}).pipe(tap(console.log));
   }
 
   getNbrReparation(){
-    console.log('tonga ato ve lo?');
-    return this.http.get(`${urlAPI}/voiture/count`,{ headers: this.headers});
+    return this.http.get(`${urlAPI}/reparation/count`,{ headers: this.headers});
   }
 
   getCoutTotal(){
-    console.log('tonga ato ve lo?');
-    console.log(`${urlAPI}/reparation/count`);
-    return this.http.get(`${urlAPI}/cout/test`,{ headers: this.headers});
+    console.log('DATA');
+    
+    return this.http.get(`${urlAPI}/cout/totalPaye`,{ headers: this.headers}).pipe(tap(console.log));
+    
   }
 
   getStatReparationJour(){
-    console.log('tonga ato ve lo?');
     return this.http.get(`${urlAPI}/stat/jour`,{ headers: this.headers});
   }
 
   getStatReparationMois(){
-    console.log('tonga ato ve lo?');
     return this.http.get(`${urlAPI}/stat/mois`,{ headers: this.headers});
   }
 
   getStatBenefice(){
-    console.log('tonga ato ve lo?');
     return this.http.get(`${urlAPI}/stat/benefice`,{ headers: this.headers});
   }
 
   getStatReparationMoyenne(){
-    console.log('tonga ato ve lo?');
     return this.http.get(`${urlAPI}/stat/reparation`,{ headers: this.headers});
   }
 }
